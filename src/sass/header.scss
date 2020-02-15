@@ -1,0 +1,123 @@
+.header-block {
+  background-color: rgba(23, 46, 94, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+  position: relative;
+  height: 100vh;
+
+  width: 100%;
+  overflow: hidden;
+
+  video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  &__wrap {
+    flex-direction: column;
+    h3 {
+      @include mq(max, $BP-mobile) {
+        font-size: 16px;
+      }
+    }
+
+    h1 {
+      font-size: 48px;
+      @include mq(max, $BP-mobile) {
+        font-size: 26px;
+      }
+    }
+
+    // border: 2px solid #fff;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    padding: 20px 0 20px 0;
+  }
+
+  &__desc {
+    max-width: 61%;
+    @include mq(max, $BP-mobile) {
+      font-size: 14px;
+      max-width: 100%;
+    }
+  }
+
+  &__bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.17);
+  }
+
+  &__info {
+    margin-right: auto;
+  }
+
+  &__arrow {
+    border-right: 1px solid rgba(255, 255, 255, 0.17);
+    border-left: 1px solid rgba(255, 255, 255, 0.17);
+
+    &:hover {
+      background-color: #fff;
+    }
+  }
+}
+
+/*Я сюда впишу класс, а ты потом перекинь куда надо, ок? ok У меня лагает и я не успеваю увидеть за 3. Потом сам настроешь сколько надо*/
+#home .nav__item.nav__item--to-left::after {
+  content: '';
+  height: 4px;
+  background: #000;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: width 0.7s;
+  width: 0;
+}
+
+#home .nav__item.nav__item--to-right::after {
+  content: '';
+  height: 4px;
+  background: #000;
+  position: absolute;
+  right: 0;
+  transition: width 0.7s;
+  bottom: 0;
+  width: 0;
+}
+
+#home .nav__item.nav__item--to-left.nav__item.nav__item--hovered::after {
+  content: '';
+  height: 4px;
+  background: #000;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+#home .nav__item.nav__item--to-right.nav__item.nav__item--hovered::after {
+  content: '';
+  height: 4px;
+  background: #000;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+}

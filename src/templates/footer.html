@@ -1,3 +1,55 @@
 {% include './modals.html' %}
-<script defer src="/js/libs.min.js"></script>
-<script defer src="/js/app.js"></script>
+
+<script>
+    const libsJs = document.createElement('script');
+    const appJs = document.createElement('script');
+    libsJs.src = '/assets/' + getAppVersion() + '/js/libs.min.js';
+    libsJs.defer = true
+    appJs.src = '/assets/' + getAppVersion() + '/js/app.js';
+    appJs.defer = true
+    document
+        .querySelector('body')
+        .append(libsJs);
+    document
+        .querySelector('body')
+        .append(appJs);
+    console.log('Версия приложения : ', getAppVersion());
+</script>
+{# 
+<div class="container-fluid">
+    <div class="row">
+        <div class="footer-block">
+            <div class="footer-block__map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d20009.21840276313!2d71.40396215!3d51.179415799999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2skz!4v1581502787252!5m2!1sru!2skz" width="100%" height="900px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+
+            </div>
+            <div class="footer-block__contact">
+                <div class="footer-block__title">
+                    <h5>контакты</h5>
+                </div>
+                <div class="footer-block__adress">г. Экибастуз Павлодарская область</div>
+                <div class="footer-block__phone">
+                    <p>+7(777)666-55-44</p>
+                    <p>+7(777)666-55-44</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div> #}
+<footer>
+
+    <div class="footer-wrapper">
+
+        <a class="arrow footer-wrapper__arrow" id="scroll" href="#home">↑</a>
+
+        <div class="footer-wrapper__left">
+            <div class="info">копирайт 2020</div>
+        </div>
+        <div class="footer-wrapper__right">
+            <div class="info">копирайт 2020</div>
+        </div>
+    </div>
+
+</footer>

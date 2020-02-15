@@ -1,0 +1,64 @@
+footer {
+  background-color: $primary;
+  text-transform: uppercase;
+  flex: 0 0 auto;
+}
+
+.footer-wrapper {
+  display: flex;
+  flex-direction: row;
+  color: #fff;
+  min-height: 120px;
+  width: 100%;
+  position: relative;
+  align-items: center;
+  padding: 16px;
+
+  &__arrow {
+    background-color: $secondary;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 70px;
+    left: calc(50% - 35px);
+  }
+
+  &__left {
+  }
+
+  &__right {
+    margin-left: auto;
+  }
+}
+
+.footer-block {
+  position: relative;
+  width: 100%;
+  color: #fff;
+
+  &__title {
+    // @extend .blog__title;
+  }
+
+  &__adress {
+  }
+
+  &__phone {
+  }
+
+  &__map {
+    overflow: hidden;
+  }
+
+  &__contact {
+    background-color: #172e5e;
+    position: absolute;
+    width: 600px;
+    height: 50%;
+    left: calc(50% - 300px);
+    bottom: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}

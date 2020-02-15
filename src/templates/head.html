@@ -1,7 +1,41 @@
-<meta charset="UTF-8" />
+<meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-<link rel="preload" href="/css/libs.min.css" as="style" />
-<link rel="preload" href="/css/app.css" as="style" />
-<link rel="stylesheet" href="/css/libs.min.css" />
-<link rel="stylesheet" href="/css/app.css" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+<script type="text/javascript" async>
+    function getAppVersion() {
+        try {
+            return process.env.appVersion
+        } catch (err) {
+            return err;
+        }
+    }
+
+    function initStylesApp() {
+        const preloadLibs = document.createElement('link');
+        preloadLibs.rel = "preload";
+        preloadLibs.href = "/assets/" + getAppVersion() + "/css/libs.min.css";
+        const preloadApp = document.createElement('link');
+        preloadApp.rel = "preload";
+        preloadApp.href = "/assets/" + getAppVersion() + "/css/app.css";
+        const libs = document.createElement('link');
+        libs.rel = "stylesheet";
+        libs.href = "/assets/" + getAppVersion() + "/css/libs.min.css";
+        const app = document.createElement('link');
+        app.rel = "stylesheet";
+        app.href = "/assets/" + getAppVersion() + "/css/app.css";
+        document
+            .querySelector('head')
+            .append(preloadLibs);
+        document
+            .querySelector('head')
+            .append(preloadApp);
+        document
+            .querySelector('head')
+            .append(libs);
+        document
+            .querySelector('head')
+            .append(app);
+        console.log(document.querySelector('head'))
+    }
+    initStylesApp();
+</script>

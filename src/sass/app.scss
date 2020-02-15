@@ -1,4 +1,17 @@
 @import '_mixins';
+@import './node_modules/mq-scss/mq';
 @import '_variables';
 @import '_animations';
 @import '_responsive';
+@import '_arrow';
+@import '_burger';
+@import '_info';
+@import '_wrap';
+@import 'modals';
+@import 'header';
+@import 'navbar';
+@import 'product';
+@import 'gallery';
+//@import 'main';
+@import 'footer';
+@import './node_modules/hamburgers/_sass/hamburgers/hamburgers.scss';

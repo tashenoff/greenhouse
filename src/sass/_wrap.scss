@@ -1,0 +1,15 @@
+.wrap {
+  width: 100%;
+  display: flex;
+  padding-left: 15px;
+  padding-right: 15px;
+  flex-wrap: wrap;
+
+  @include mq(max $BP-page) {
+  }
+}
+
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+}
