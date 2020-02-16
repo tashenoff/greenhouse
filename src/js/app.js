@@ -1,13 +1,14 @@
-$(function() {
-  objectFitImages();
-});
-
+document.load = function() {
+  $(function() {
+    objectFitImages();
+  });
+};
 var modal = document.getElementById('myModal');
 
 var img = document.getElementById('myImgs');
 var modalImg = document.getElementById('img01');
 var captionText = document.getElementById('caption');
-var body = document.body;
+var body = document.querySelector('#example'); //От сюда z
 var span = document.getElementsByClassName('modal-gallery__close')[0];
 let logo = 'img/logo.png';
 let logotwo = 'img/logo_color.png ';
@@ -32,9 +33,23 @@ for (let anchor of anchors) {
   });
 }
 
+document.addEventListener('scroll', (e) => {
+  console.log(window);
+  if (window.screenY > 50) {
+    document.querySelector('.nav__hamburger').classList.add('is-scrolled');
+  }
+});
+
 hamburger.addEventListener('click', function() {
   hamburger.classList.toggle('is-active');
   mobmenu.classList.toggle('nav__right--visible');
+  if (hamburger.classList.contains('is-active')) {
+    body.style.overflowY = 'hidden'; // body переменную переименуй, под какую нить осмысленную, типа wrapper
+    body.style.position = 'fixed';
+  } else {
+    body.style.overflowY = 'visible';
+    body.style.position = 'relative';
+  }
 });
 
 let clientPosition = 0;
@@ -79,13 +94,24 @@ function scrollFunction() {
 span.onclick = function() {
   modal.style.display = 'none';
   body.style.overflowY = 'visible';
+  body.style.position = 'relative';
 };
 
 document.getElementById('tomatosRow').addEventListener('click', (e) => {
   if (e.target.classList.contains('container-gallery__item--img')) {
     modalImg.src = e.target.src;
     modal.style.display = 'block';
-    body.style.overflowY = 'hidden';
+    body.style.overflowY = 'hidden'; // body переменную переименуй, под какую нить осмысленную, типа wrapper
+    body.style.position = 'fixed';
   }
   e.preventDefault();
 });
+
+//збс а можно вопрос один
+//дэ смотри, я вот сдела что бы скрол блочился при модалке
+//Тебе iverflow надо вешать не на body , а на какой
+//По ходу ниче ты не сделаешь с этим)
+//А  я не могу скролить, шо за хуйня?
+//все заебись
+// Точно? сек, точно! тогда ниже код не нужен?Какой? Нужен ты просто исправь коекакие моменты.
+//с этим понятно, слушай а можно еще один вопрос?)давай Я вот делаю адаптивное меню смотри

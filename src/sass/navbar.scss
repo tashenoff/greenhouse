@@ -40,20 +40,27 @@
     display: flex;
 
     @include mq(max, $BP-mobile) {
-      display: none;
+      right: -100vw; //
+      transition: right 3s;
+      position: absolute;
       width: 0;
     }
 
+    //при клике через джс включаю этот класс, он зависит. Теперь, я хотел что бы при нажатии, выезжал фон ща покажу на другом экране
+    //и типа нехуя чет не получается пиши? я не пойму, ты закоментил дисплой ноне, а куда меню тогда сьебалось. За край экрана его нет)
+    //Я сейчас подайду, отползу за чаем ок ок, а тут тоже аналогично скрол блочить? заебись чо) единственный момент который я вот думаю, ну что бы не ебаться, я типа скачал гамбурегер
     &--visible {
       background-color: red;
-      width: 150px;
+      width: 100%; //То есть на весь экран шоб была? да. А на хуя тут 150 п ихелей? это я эксперементировал, я то могу на весь экран но мне анимация нужна
       position: absolute;
       height: 100vh;
       display: block;
       z-index: -2;
-      top: 0;
+      top: 59px;
+      right: 0;
       align-items: center;
       justify-content: center;
+      transition: right 3s;
     }
   }
 
@@ -117,7 +124,16 @@
     text-transform: uppercase;
     text-decoration: none;
   }
+
   .nav__hamburger {
+    &.is-scrolled {
+      .hamburger-inner,
+      //я так делал, но просто думал, а можно ли как то отсюда передавать значение в переменную туда, хочешь покажу чот давай)
+      .hamburger-inner::before,
+      .hamburger-inner::after {
+        background-color: red;
+      }
+    }
   }
 }
 

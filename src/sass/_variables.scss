@@ -2,14 +2,14 @@ $primary: #172e5e;
 $secondary: #3ab349;
 $hamburger-padding-x: 15px;
 $hamburger-padding-y: 15px;
-$hamburger-layer-width: 25px;
+$hamburger-layer-width: 29px;
 $hamburger-layer-height: 2px;
 $hamburger-layer-spacing: 6px;
-$hamburger-layer-color: #fff;
+$hamburger-layer-color: #fff; //вот этот параметр нет. Только если через миксины
 $hamburger-layer-border-radius: 4px;
 $hamburger-hover-opacity: 0.7;
 $hamburger-active-layer-color: $hamburger-layer-color;
-$hamburger-active-hover-opacity: $hamburger-hover-opacity;
+$hamburger-active-hover-opacity: $hamburger-hover-opacity; //вот его настройки, а теперь думаю, бля а как сделать что бы когда скроилшь вниз его цвет менять
 
 $BP-minimum: 320px;
 $BP-tiny: 350px;
@@ -19,9 +19,5 @@ $BP-phablet: 770px;
 $BP-tablet: 960px;
 $BP-large: 1024px;
 $BP-page: 1440px;
-
-@mixin hamburgercolor() {
-  $hamburger-layer-color: $secondary;
-}
 
 $max-width: 1400px;

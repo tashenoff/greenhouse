@@ -12,4 +12,20 @@
 .container {
   max-width: $max-width;
   margin: 0 auto;
+  padding: 0 30px;
+}
+
+.row {
+  // width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.col {
+}
+
+.col-6 {
+  width: calc(50% - 30px);
+  border: 1px solid red;
 }

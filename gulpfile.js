@@ -65,14 +65,14 @@ function imgProcessWebp() {
   return gulp
     .src('src/img/**/*.*')
     .pipe(webp())
-    .pipe(gulp.dest(`dist/assets/${appVersion}/img/`));
+    .pipe(gulp.dest(`dist/img/`));
 }
 
 function imgProcessWatch() {
   return gulp
     .src('src/img/**/*.*')
     .pipe(changed('dist/img/'))
-    .pipe(gulp.dest(`dist/assets/${appVersion}/img/`));
+    .pipe(gulp.dest(`dist/img/`));
 }
 
 // Работа с картинками для Production
@@ -86,7 +86,7 @@ function imgProcessBuild() {
         }),
       ]),
     )
-    .pipe(gulp.dest(`dist/assets/${appVersion}/img/`));
+    .pipe(gulp.dest(`dist/img/`));
 }
 
 // Копирование шрифтов
