@@ -1,17 +1,39 @@
-ul.check li {
-  text-indent: -1.4em;
+ul {
+  margin: 0;
+  padding: 0;
 }
 
 .services {
-  list-style-type: none;
-}
+  line-height: 64px;
+  font-size: 18px;
+  list-style: none;
 
-ul.services li:before {
-  content: '';
-  background-image: url('/img/check.png') center left no-repeat;
-  width: 50px;
-  height: 50px;
-  border: 1px solid red;
-  padding: 20px 0 20px 50px;
-  list-style-type: none;
+  @include mq(max $BP-mobile) {
+    line-height: 32px;
+    font-size: 16px;
+  }
+
+  &__check {
+    padding: 0 60px;
+    position: relative;
+
+    @include mq(max $BP-mobile) {
+      padding: 15px 45px;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      width: 51px;
+      background-repeat: no-repeat;
+      left: 0;
+      height: 100%;
+      position: absolute;
+      background-image: url(/img/check.svg);
+
+      @include mq(max $BP-mobile) {
+        width: 32px;
+      }
+    }
+  }
 }

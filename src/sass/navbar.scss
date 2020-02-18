@@ -4,10 +4,11 @@
   width: 100%;
   transition: all 0.4s;
   border-bottom: 1px solid rgba(255, 255, 255, 0.17);
+  min-height: 56px;
 
   &__hamburger {
     position: absolute;
-    right: 15px;
+    right: 0;
     display: none !important;
     border-left: 1px solid rgba(255, 255, 255, 0.17) !important;
 
@@ -16,14 +17,15 @@
     }
   }
 
-  &__container {
+  &__wrapper {
     flex-direction: row;
     justify-content: center;
     align-items: center;
     margin-bottom: 0px;
-    min-height: 56px;
+
     display: flex;
     width: 100%;
+    position: relative;
 
     @include mq(max, $BP-mobile) {
       flex-direction: column;
@@ -135,7 +137,7 @@
       }
     }
 
-    right: 15px;
+    right: 0;
 
     &.is-scrolled {
       .hamburger-inner,
@@ -153,4 +155,8 @@
 
 .scroll {
   scroll-behavior: smooth;
+}
+
+.logo {
+  width: 160px;
 }

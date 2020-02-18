@@ -84,10 +84,10 @@ function scrollFunction() {
     document.documentElement.scrollTop > 280
   ) {
     document.getElementById('navbar').classList.add('white');
-    document.getElementById('logo').src = 'img/logo_color.png';
+    document.getElementById('logo').src = '/img/logo_color.svg';
   } else {
     document.getElementById('navbar').classList.remove('white');
-    document.getElementById('logo').src = 'img/logo.png';
+    document.getElementById('logo').src = '/img/logo_white.svg';
   }
 }
 

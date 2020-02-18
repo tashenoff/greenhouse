@@ -1,0 +1,58 @@
+.title-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  padding: 0 90px;
+  height: 80px;
+  background-repeat: no-repeat;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 34px 0px;
+
+  @include mq(max $BP-mobile) {
+    height: 60px;
+    padding: 0 68px;
+    margin: 18px 0px;
+  }
+
+  &:after {
+    content: '';
+    left: 0;
+    display: block;
+    position: absolute;
+  }
+
+  &--about {
+    background-image: url('/img/about_icon.svg');
+  }
+
+  &--product {
+    background-image: url('/img/product_icon.svg');
+  }
+
+  &--gal {
+    background-image: url('/img/gal_icon.svg');
+  }
+
+  &--news {
+    background-image: url('/img/news_icon.svg');
+  }
+
+  &--service {
+    background-image: url('/img/service_icon.svg');
+  }
+
+  &__label {
+    color: $primary;
+  }
+
+  &__title {
+    font-size: 24px;
+
+    @include mq(max $BP-mobile) {
+      font-size: 18px;
+    }
+  }
+}

@@ -12,20 +12,23 @@
 .container {
   max-width: $max-width;
   margin: 0 auto;
-  padding: 0 30px;
+  padding: 0 15px;
 
   @include mq(max $BP-mobile) {
   }
 }
 
 .row {
-  // width: 100%;
   display: flex;
   flex-wrap: wrap;
   margin: 0 -15px;
 
   @include mq(max $BP-mobile) {
   }
+}
+
+.col-12 {
+  width: calc(100% - 30px);
 }
 
 .col {
