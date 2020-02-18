@@ -1,5 +1,4 @@
 .nav {
-  display: flex;
   position: fixed;
   z-index: 2;
   width: 100%;
@@ -8,7 +7,7 @@
 
   &__hamburger {
     position: absolute;
-    right: 0;
+    right: 15px;
     display: none !important;
     border-left: 1px solid rgba(255, 255, 255, 0.17) !important;
 
@@ -17,17 +16,17 @@
     }
   }
 
-  &__wrap {
+  &__container {
     flex-direction: row;
     justify-content: center;
     align-items: center;
     margin-bottom: 0px;
     min-height: 56px;
+    display: flex;
+    width: 100%;
 
     @include mq(max, $BP-mobile) {
       flex-direction: column;
-
-      margin-top: 2px;
     }
   }
 
@@ -126,12 +125,27 @@
   }
 
   .nav__hamburger {
+    .hamburger-inner,
+    .hamburger-inner::before,
+    .hamburger-inner::after {
+      background-color: red;
+
+      @include mq(max, $BP-mobile) {
+        background-color: red;
+      }
+    }
+
+    right: 15px;
+
     &.is-scrolled {
       .hamburger-inner,
-      //я так делал, но просто думал, а можно ли как то отсюда передавать значение в переменную туда, хочешь покажу чот давай)
       .hamburger-inner::before,
       .hamburger-inner::after {
         background-color: red;
+
+        @include mq(max, $BP-mobile) {
+          background-color: red;
+        }
       }
     }
   }

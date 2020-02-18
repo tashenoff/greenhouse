@@ -1,11 +1,9 @@
 .container-gallery {
-  width: 100%;
   display: flex;
   margin: 0 auto;
   overflow: hidden;
 
   &__item {
-    width: 25%;
     display: block;
     transition: all 0.4s;
     position: relative;

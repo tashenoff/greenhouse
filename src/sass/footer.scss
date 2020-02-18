@@ -47,6 +47,12 @@ footer {
 
   &__map {
     overflow: hidden;
+
+    @include mq(max $BP-mobile) {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
   }
 
   &__contact {
@@ -56,9 +62,21 @@ footer {
     height: 50%;
     left: calc(50% - 300px);
     bottom: 25%;
+
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    @include mq(max $BP-mobile) {
+      width: 100%;
+      bottom: 0;
+      left: 0;
+    }
   }
+}
+
+.container-fluid {
+  width: 100%;
+  overflow: hidden;
 }
