@@ -4,7 +4,7 @@ document.load = function() {
   });
 };
 var modal = document.getElementById('myModal');
-
+var shadow = document.getElementById('shadow');
 var img = document.getElementById('myImgs');
 var modalImg = document.getElementById('img01');
 var captionText = document.getElementById('caption');
@@ -33,22 +33,24 @@ for (let anchor of anchors) {
   });
 }
 
-document.addEventListener('scroll', (e) => {
-  console.log(window);
-  if (window.screenY > 50) {
-    document.querySelector('.nav__hamburger').classList.add('is-scrolled');
-  }
-});
+// document.addEventListener('scroll', (e) => {
+//   console.log(window);
+//   if (window.screenY > 50) {
+//     document.querySelector('.nav__hamburger').classList.add('is-scrolled');
+//   }
+// });
 
 hamburger.addEventListener('click', function() {
   hamburger.classList.toggle('is-active');
   mobmenu.classList.toggle('nav__right--visible');
   if (hamburger.classList.contains('is-active')) {
-    body.style.overflowY = 'hidden'; // body переменную переименуй, под какую нить осмысленную, типа wrapper
-    body.style.position = 'fixed';
+    // body.style.overflowY = 'hidden'; // body переменную переименуй, под какую нить осмысленную, типа wrapper
+    // body.style.position = 'fixed';
+    shadow.classList.add('shadow-wrapper--active');
   } else {
-    body.style.overflowY = 'visible';
-    body.style.position = 'relative';
+    // body.style.overflowY = 'visible';
+    shadow.classList.remove('shadow-wrapper--active');
+    // body.style.position = 'relative';
   }
 });
 

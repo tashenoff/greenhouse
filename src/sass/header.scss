@@ -11,6 +11,10 @@
   width: 100%;
   overflow: hidden;
 
+  @include mq(max, $BP-mobile) {
+    height: 94vh;
+  }
+
   video {
     position: absolute;
     top: 50%;
@@ -25,6 +29,7 @@
 
   &__wrap {
     flex-direction: column;
+
     h3 {
       @include mq(max, $BP-mobile) {
         font-size: 16px;
@@ -33,6 +38,7 @@
 
     h1 {
       font-size: 48px;
+
       @include mq(max, $BP-mobile) {
         font-size: 26px;
       }
@@ -48,8 +54,10 @@
 
   &__desc {
     max-width: 61%;
+    font-size: 18px;
+
     @include mq(max, $BP-mobile) {
-      font-size: 14px;
+      font-size: 15px;
       max-width: 100%;
     }
   }
@@ -59,9 +67,6 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     border: 1px solid rgba(255, 255, 255, 0.17);
   }
 
@@ -75,6 +80,7 @@
 
     &:hover {
       background-color: #fff;
+      color: $primary;
     }
   }
 }

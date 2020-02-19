@@ -1,0 +1,47 @@
+.about-us {
+  &__right {
+    background-color: #ebedf2;
+    padding: 20px;
+    position: relative;
+    margin: 10px;
+  }
+
+  &__time {
+    padding-top: 20px;
+  }
+
+  &__title {
+    font-size: 25px;
+    padding: 10px 10px;
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    height: 80px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      background-color: #3ab349;
+      display: block;
+      height: 50px;
+      width: 270px;
+      border-radius: 7px;
+      left: -10px;
+      z-index: 1;
+    }
+
+    @include mq(max $BP-mobile) {
+      max-width: 100%;
+    }
+  }
+
+  &__label {
+    z-index: 1;
+    position: relative;
+  }
+
+  &__desc {
+    padding-left: 20px;
+  }
+}
